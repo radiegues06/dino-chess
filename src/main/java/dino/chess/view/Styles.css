@@ -1,0 +1,18 @@
+.darkSquare {
+	-fx-background-color: #869586;
+}
+
+.square {
+	-fx-border-color: #000000;
+	-fx-border-width: 0.5pt;
+	-fx-border-transparency:0.2;
+}
+
+.lightSquare {
+	-fx-background-color: #EAEAEA;
+}
+
+.board {
+	-fx-border-color: #000000;
+	-fx-border-width: 3pt;
+}
