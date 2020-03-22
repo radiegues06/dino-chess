@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="580.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="580.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dino.chess.view.MainController">
    <children>
       <AnchorPane layoutX="7.0" layoutY="-18.0" prefHeight="580.0" prefWidth="580.0" styleClass="board" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <GridPane styleClass="board" stylesheets="@Styles.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <GridPane fx:id="board" styleClass="board" stylesheets="@Styles.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="70.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="70.0" />
@@ -33,12 +37,32 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteRook" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="358.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -68,17 +92,47 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="1">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackKnight" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="697.0" minY="22.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn2" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -93,12 +147,32 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackQueen" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="187.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn4" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -113,12 +187,32 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn3" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteBishop" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="524.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="4" GridPane.rowIndex="5">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -128,12 +222,32 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteKing" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="22.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="5">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackBishop1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="524.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -143,12 +257,32 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn6" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="7">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackRook1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="358.0" minY="22.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="6" GridPane.rowIndex="3">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -163,7 +297,17 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn5" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="6" GridPane.rowIndex="5">
                <styleClass>
                   <String fx:value="darkSquare" />
@@ -183,27 +327,77 @@
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn7" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="darkSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteKnight1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="696.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackRook" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="358.0" minY="22.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackBishop" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="524.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="lightSquare" />
@@ -223,27 +417,77 @@
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackKing" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="22.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn3" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn5" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="6">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackKnight1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="697.0" minY="22.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="blackPawn7" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="859.0" minY="20.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <styleClass>
                   <String fx:value="lightSquare" />
@@ -313,42 +557,122 @@
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn2" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="4" GridPane.rowIndex="6">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn4" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="6" GridPane.rowIndex="6">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whitePawn6" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="860.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteKnight" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="696.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteQueen" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="187.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="5" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteBishop1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="524.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../../../../bin/dino/chess/view/Styles.css" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <styleClass>
                   <String fx:value="lightSquare" />
                   <String fx:value="square" />
-               </styleClass></Pane>
+               </styleClass>
+               <children>
+                  <ImageView fx:id="whiteRook1" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#pieceClicked" onMouseDragged="#pieceDragged" onMouseReleased="#pieceReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Pieces.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="100.0" minX="358.0" minY="165.0" width="100.0" />
+                     </viewport>
+                  </ImageView>
+               </children></Pane>
          </children>
       </GridPane>
    </children>
